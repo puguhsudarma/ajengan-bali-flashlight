@@ -5,8 +5,8 @@ services:
     build: .
     image: flashlight:dev
     environment:
-      FB_URL: https://my-project.firebaseio.com
-      ES_HOST: elasticsearch
+      FB_URL: https://ajengan-bali.firebaseio.com
+      ES_HOST: first-cluster-4342802801.us-east-1.bonsaisearch.net
       NODE_ENV: production
     volumes:
       - ./service-account.json:/opt/app/service-account.json
