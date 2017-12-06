@@ -24,7 +24,7 @@ exports.FB_SERVICEACCOUNT = process.env.FB_ACC || 'service-account.json';
 
 /** ElasticSearch Settings
  *********************************************/
-// process.env.BONSAI_URL = 'https://n48f1kgni2:gn9xp882mt@first-cluster-4342802801.us-east-1.bonsaisearch.net';
+
 if( process.env.BONSAI_URL ) {
   processBonsaiUrl(exports, process.env.BONSAI_URL);
 }
@@ -63,17 +63,18 @@ exports.paths = [
   {
     path : "warung",
     index: "firebase_warung",
-    type : "warung",
-    // fields: ['alamat', 'daerah', 'kategori', 'nama'],
-    filter: function(data){ return data.softDelete === false; }
+    type : "warung"
   },
   {
     path : "makanan",
     index: "firebase_makanan",
-    type : "makanan",
-    // fields: ['harga', 'kategori', 'nama'],
-    filter: function(data){ return data.softDelete === false; }
+    type : "makanan"
   },
+  // {
+  //   path : "users",
+  //   index: "firebase",
+  //   type : "user"
+  // },
   // {
   //   path  : "messages",
   //   index : "firebase",
