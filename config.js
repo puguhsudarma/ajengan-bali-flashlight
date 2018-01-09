@@ -25,7 +25,7 @@ exports.FB_SERVICEACCOUNT = process.env.FB_ACC || 'service-account.json';
 /** ElasticSearch Settings
  *********************************************/
 
-if( process.env.BONSAI_URL = 'https://mz98rdy:npnaozmfp26862ig@box-643160.us-east-1.bonsaisearch.net' ) {
+if( process.env.BONSAI_URL ) {
   processBonsaiUrl(exports, process.env.BONSAI_URL);
 }
 else {
@@ -63,7 +63,8 @@ exports.paths = [
   {
     path : "warung",
     index: "firebase_warung",
-    type : "warung"
+    type : "warung",
+    filter: function(data) { return data.verifikasi !== false; }
   },
   {
     path : "makanan",
